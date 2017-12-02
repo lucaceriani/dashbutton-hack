@@ -14,6 +14,7 @@ class dashButton:
 	def __arp_display(self, pkt):
 		if pkt[ARP].op == 1:
 			if pkt[ARP].hwsrc == self.__macAddress:
-				self.__execFunction(dashButton)
-
-#print (sniff(prn=arp_display, filter="arp", store=0, count=0))
+				self.__execFunction(self)
+	
+	def getMacAddress(self):
+		return self.__macAddress
